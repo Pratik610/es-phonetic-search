@@ -109,6 +109,12 @@ const main = async () => {
             index: "users",
 
             settings: {
+
+                //  For distributing the data across multiple nodes, you can set the number of shards and replicas 
+
+                // number_of_shards: 3,
+                // number_of_replicas: 1,
+                
                 analysis: {
                     filter: {
                         name_phonetic: {
@@ -196,7 +202,7 @@ const main = async () => {
         });
 
     }
-    
+
 
 
     addUsers().catch(console.error);
