@@ -35,9 +35,11 @@ flowchart TD
         NYSIISFilter --> F2["name.nysiis"]
         MetaphoneFilter --> F3["name.phonetic"]
         Lowercase --> F0["name (Standard)"]
-    end
-
-    subgraph QueryFlow["2. Search Pipeline"]
+    end 
+```
+```mermaid
+flowchart TD
+subgraph QueryFlow["2. Search Pipeline"]
         SearchInput["Query: 'smiith'"] --> BoolShould["Bool Query (Should)"]
         BoolShould --> Q1["match: name (boost: 3, fuzziness: AUTO)"]
         BoolShould --> Q2["match: name.soundex (boost: 2, fuzziness: AUTO)"]
